@@ -50,20 +50,40 @@ verbs = ["be", "have", "do", "say", "go", "can", "get", "would", "make",
          "consider", "appear", "buy", "wait", "serve", "die", "send", "expect",
          "build", "stay", "fall", "cut", "reach", "kill", "remain"]
 
+print("Exercise 1")
+for i in range(20):
+    adjective = random.choice(adjectives)
+    noun = random.choice(nouns)
+    print(adjective + " " + noun)
+
+print("\nExercise 2")
 for i in range(20):
     art = random.choice(articles)
     noun = random.choice(nouns)
     verb = random.choice(verbs)
     print(art + " " + noun + " " + verb)
 
+print("\nExercise 3")
 combinations = list()
 for art in articles:
     for noun in nouns:
         for verb in verbs:
             combinations.append(art + " " + noun + " " + verb)
 
-print("\nAll possible combinations: " + str(len(combinations)))
+print("All possible combinations: " + str(len(combinations)))
 print("Here's a few of those combinations:")
 
 for combination in range(10):
     print(random.choice(combinations))
+
+
+print("\nExercise 1 in conditional statements")
+for i in range(20):
+    art = ""
+    noun = random.choice(nouns)
+    verb = random.choice(verbs)
+    if noun[0] in "aeiou":
+        art = random.choice(articles[::len(articles)-1])
+    else:
+        art = articles[random.randint(0, 1)]
+    print(art + " " + noun + " " + verb)
